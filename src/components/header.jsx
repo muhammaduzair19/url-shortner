@@ -1,13 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Button } from './ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from './ui/dropdown-menu';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { LinkIcon, LogOut } from 'lucide-react';
+import { UrlState } from '@/context';
 
 const Header = () => {
     const navigate = useNavigate()
-    const user = true;
+    const { user, fetchUser } = UrlState();
+
+    useEffect(() => {
+        fetchUser()
+        console.log(user?.user_metadata);
+    }, [user])
     return (
         <div className='w-full flex py-4 justify-between items-center'>
             <Link to={'/'} >
@@ -21,13 +27,12 @@ const Header = () => {
                 <DropdownMenu>
                     <DropdownMenuTrigger className='w-10 rounded-full overflow-hidden'>
                         <Avatar>
-                            <AvatarImage src="https://xgithub.com/shadcn.png" />
-                            <AvatarFallback>MU</AvatarFallback>
+                            <AvatarImage src={user?.user_metadata?.profile_pic} />
                         </Avatar>
 
                     </DropdownMenuTrigger>
                     <DropdownMenuContent>
-                        <DropdownMenuLabel>Muhammad Uzair</DropdownMenuLabel>
+                        <DropdownMenuLabel>{user?.user_metadata?.name}</DropdownMenuLabel>
                         <DropdownMenuSeparator />
                         <DropdownMenuItem>
                             <span>
