@@ -1,4 +1,6 @@
+import Footer from '@/components/footer'
 import Header from '@/components/header'
+import { Facebook, FacebookIcon, Github, LinkedinIcon, LucideFacebook } from 'lucide-react'
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 
@@ -7,12 +9,9 @@ const AppLayout = () => {
         <div >
             <main className='min-h-screen container'>
                 <Header />
-                {/* body  */}
                 <Outlet />
             </main>
-            <footer className='p-10 text-center bg-gray-800 mt-10'>
-                Made with ❤ by zairdev
-            </footer>
+            <Footer />
         </div>
     )
 }
