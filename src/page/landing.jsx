@@ -1,7 +1,7 @@
 import Accordian from '@/components/accordian'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 
@@ -14,6 +14,10 @@ const LandingPage = () => {
 
         if (longUrl) navigate(`/auth?createNew=${longUrl}`)
     }
+
+    // useEffect(() => {
+    //     // console.log('first')
+    // })
 
 
     return (

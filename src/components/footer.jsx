@@ -14,12 +14,12 @@ const Footer = () => {
                     <Github />
                 </a>
             </div>
-            <span className='w-full h-[0.1px] opacity-30  bg-gray-400 mt-5' />
+            <div className='w-full h-[0.1px] opacity-30  bg-gray-400 mt-5' />
             <div className='flex justify-center text-xs mt-2 items-center gap-1'>
-                &#169; All rights and copyright reserved by <a href='#'  className='cursor-pointer hover:text-slate-300 text-sm font-semibold'>Uzairdev</a>
+                &#169; All rights and copyright reserved by <a href='#' className='cursor-pointer hover:text-slate-300 text-sm font-semibold'>Uzairdev</a>
             </div>
         </footer>
     )
 }
-
+``
 export default Footer;
