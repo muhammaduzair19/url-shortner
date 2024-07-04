@@ -9,10 +9,9 @@ export default function RequiredAuth({ children }) {
 
     useEffect(() => {
         fetchUser()
-        if (!isAuthenticated && loading === false) navigate('/auth')
+        if (!isAuthenticated && loading == false) navigate('/auth')
     }, [isAuthenticated, loading]);
 
-    if (loading) return <BarLoader width={'100%'} color='#36d7b7' />
-
     if (isAuthenticated) return children;
+    if (loading) return <BarLoader width={'100%'} color='#36d7b7' />
 }

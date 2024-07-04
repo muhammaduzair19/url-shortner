@@ -15,7 +15,6 @@ const Header = () => {
 
     useEffect(() => {
         fetchUser()
-        console.log(user?.user_metadata);
     }, [user])
 
     const { loading, fn: fnLogout } = useFetch(logout)
@@ -42,10 +41,10 @@ const Header = () => {
                             <DropdownMenuLabel>{user?.user_metadata?.name}</DropdownMenuLabel>
                             <DropdownMenuSeparator />
                             <DropdownMenuItem>
-                                <span className='flex items-center'>
+                                <Link to={'/dashboard'} className='flex items-center'>
                                     <LinkIcon className='w-4 h-4 mr-2' />
                                     My Links
-                                </span>
+                                </Link>
                             </DropdownMenuItem>
                             <DropdownMenuItem className="text-red-600">
                                 <span
